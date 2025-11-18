@@ -1,0 +1,144 @@
+/* index.css
+   Minimal, elegant palette (muted teal + warm gray).
+   Not Instagram/Gmail colors; clean, airy layout.
+*/
+
+:root{
+  --bg: #f5f7f9;            /* page background */
+  --card: #ffffff;          /* card background */
+  --muted: #6b7280;        /* small text */
+  --accent: #0f766e;       /* primary accent (teal-ish) */
+  --accent-2: #f59e0b;     /* secondary warm accent (amber) */
+  --danger: #ef4444;
+  --radius: 10px;
+  --glass: rgba(255,255,255,0.7);
+  --shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html,body,#root { height:100%; }
+body {
+  margin:0;
+  background: linear-gradient(180deg, #f8fafb 0%, var(--bg) 100%);
+  -webkit-font-smoothing:antialiased;
+  color: #0f172a;
+}
+
+/* container card used everywhere */
+.app-container {
+  max-width: 980px;
+  margin: 36px auto;
+  padding: 28px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* header */
+.header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  margin-bottom: 18px;
+}
+.h-title {
+  margin:0; font-size:20px; font-weight:600;
+}
+.h-sub { color:var(--muted); font-size:13px; margin-top:6px; }
+
+/* form basics */
+.form { display:flex; flex-direction:column; gap:12px; width:100%; }
+.input {
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid #e6edf0;
+  background: linear-gradient(180deg, rgba(250,250,250,1), rgba(244,246,247,1));
+  outline:none;
+  font-size:14px;
+}
+.input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(15,118,110,0.06); }
+
+/* buttons */
+.btn {
+  padding:10px 14px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+}
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid rgba(15,118,110,0.08);
+}
+
+/* small helpers */
+.small { font-size:13px; color:var(--muted); }
+.row { display:flex; gap:10px; align-items:center; }
+
+/* login layout */
+.login-wrap {
+  display:flex;
+  gap:28px;
+  align-items:stretch;
+}
+.login-panel {
+  flex:1.1;
+  padding:28px;
+  border-radius:10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(250,252,253,0.9));
+  box-shadow: 0 4px 10px rgba(15,23,42,0.04);
+}
+.login-illustration {
+  flex:0.9;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  border-radius:10px;
+  background: linear-gradient(135deg, rgba(15,118,110,0.06), rgba(245,158,11,0.04));
+}
+
+/* tiny branding */
+.brand {
+  display:flex; align-items:center; gap:10px;
+}
+.logo {
+  width:40px; height:40px; border-radius:8px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  display:flex; align-items:center; justify-content:center; color:white; font-weight:700;
+}
+
+/* dashboard small items */
+.stats {
+  display:flex;
+  gap:18px;
+  margin-top:12px;
+  align-items:center;
+}
+.stat-card {
+  flex:1; padding:14px; border-radius:10px;
+  background: linear-gradient(180deg, rgba(255,255,255,1), rgba(250,251,252,1));
+  border: 1px solid #eef2f3;
+  box-shadow: 0 4px 12px rgba(15,23,42,0.03);
+}
+
+/* task list */
+.tasks { margin-top:20px; display:grid; gap:10px; }
+.task-card {
+  display:flex; justify-content:space-between; padding:12px; border-radius:8px;
+  background: linear-gradient(180deg,#fff,#fbfdfe); border:1px solid #eef2f3;
+}
+.progress-badge { padding:4px 8px; border-radius:8px; font-weight:600; font-size:12px; }
+
+/* responsive */
+@media (max-width:880px){
+  .login-wrap { flex-direction:column; }
+  .login-illustration { order: -1; }
+}
